@@ -52,6 +52,27 @@ class SolutionTwo {
 /*
 |2020.7.8| [70.爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)|[张颖]
 */
+class SolutionThree {
 
+    /**
+     * @param Integer $n
+     * @return Integer
+     */
+    function climbStairs($n) {
+        //F(X) = F(X-1)+F(X-2)
+        if ($n <= 2) {
+            return $n;
+        }
+        $first = 1; 
+        $second = 2;
+        $sum = 0;
+        while ($n-- > 2) {
+            $sum = $first + $second;
+            $first = $second;
+            $second = $sum;
+        }
+        return $sum;
+     }
+}
 
 ?>
