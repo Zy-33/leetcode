@@ -2,7 +2,7 @@
 /*
 |2020.7.8| [11.盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/)|[张颖]
 */
-class Solution {
+class SolutionOne {
     /**
      * @param Integer[] $height
      * @return Integer
@@ -27,6 +27,30 @@ class Solution {
 }
 /*
 |2020.7.8| [283. 移动零](https://leetcode-cn.com/problems/move-zeroes/)|[张颖]
+*/
+class SolutionTwo {
+
+    /**
+     * @param Integer[] $nums
+     * @return NULL
+     */
+    function moveZeroes(&$nums) {
+        $length = count($nums);
+        $j = 0; 
+        for($i=0 ; $i < $length; $i++) {
+            if($nums[$i] != 0) {
+                $tmp = $nums[$j];
+                $nums[$j] = $nums[$i];
+                $nums[$i] = $tmp;
+                $j++;
+            }
+        }
+         return $nums;
+    }
+}
+
+/*
+|2020.7.8| [70.爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)|[张颖]
 */
 
 
